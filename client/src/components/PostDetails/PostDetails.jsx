@@ -47,21 +47,23 @@ const Post = () => {
     <Paper style={{ padding: "20px", borderRadius: "15px" }} elevation={6}>
       <div className={classes.card}>
         <div className={classes.section}>
-          <Typography variant="h3" component="h2">
+          <Typography variant="h4" component="h2">
             {post.title}
           </Typography>
           <Typography
             gutterBottom
-            variant="h6"
+            style={{ fontSize: "0.9rem", color: "#c9c9c9" }}
             color="textSecondary"
-            component="h2"
+            component="p"
           >
             {post.tags.map((tag) => `#${tag} `)}
           </Typography>
-          <Typography gutterBottom variant="body1" component="p">
+          <Typography gutterBottom variant="h6" component="p">
             {post.message}
           </Typography>
-          <Typography variant="h6">Created by: {post.name}</Typography>
+          <Typography style={{ fontSize: "1rem", color: "#c9c9c9" }}>
+            Created by: {post.name}
+          </Typography>
           <Typography variant="body1">
             {moment(post.createdAt).fromNow()}
           </Typography>
@@ -77,6 +79,7 @@ const Post = () => {
         </div>
         <div className={classes.imageSection}>
           <img
+            style={{ boxShadow: " 3px 8px 3px 3px #e0e0e0" }}
             className={classes.media}
             src={
               post.selectedFile ||
